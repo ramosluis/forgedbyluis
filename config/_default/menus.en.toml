@@ -17,7 +17,7 @@
 
 [[main]]
   name = "Books"
-  pageRef = "books"
+  url = "/tags/books/"
   weight = 20
 
 [[main]]
@@ -30,11 +30,11 @@
   pageRef = "contact"
   weight = 40
 
-#[[main]]
-#  name = "example sub-menu 1"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
+[[main]]
+  name = "Rating System"
+  parent = "Books"
+  pageRef = "my-rating-system"
+  weight = 10
 
 #[[main]]
 #  name = "example sub-menu 2"

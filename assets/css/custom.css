@@ -16,7 +16,7 @@
 }
 
 /* Fix hero image cropping on article pages */
-article > div.overflow-hidden {
+/* article > div.overflow-hidden {
     height: auto !important;
 }
 
@@ -24,6 +24,27 @@ article > div.overflow-hidden img {
     height: auto !important;
     object-fit: contain !important;
     max-width: 300px;
+    margin: 0 auto;
+    display: block;
+} */
+
+/* Book cover portrait images */
+article > div.book-cover-hero {
+    height: auto !important;
+}
+
+article > div.book-cover-hero img {
+    position: relative !important;
+    height: auto !important;
+    object-fit: contain !important;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Inline book covers inside posts */
+.inline-book-cover {
+    max-width: 200px;
     margin: 0 auto;
     display: block;
 }
