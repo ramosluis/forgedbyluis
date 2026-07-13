@@ -18,6 +18,8 @@ This is a novella, clocking in at around 60 pages in length, but it uses those 6
 
 Is it a perfect book? Not for me. The ending feels a little rushed, even for a novella. The resolution of the story sort of just comes out of nowhere, it's not enough of a problem to deter me from recommending the book, but it does hold it back a bit for me.
 
+If you've never heard about a video game demo about 10 years ago called [P.T.](https://www.youtube.com/watch?v=r6NCC-nnvMU), I suggest you check it out, it has a very similar vibe to this book, although the game was much scarier in my opinion.
+
 If you're looking for a quick read to get you out of a reading funk, or just a great gothic story, I highly recommend you check this out.
 
 ## Rating
