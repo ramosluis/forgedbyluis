@@ -1,5 +1,5 @@
 ---
-title: "Love in the Time of Cholera - Gabriel García Márquez"
+title: "El Amor en los Tiempos del Cólera - Gabriel García Márquez"
 date: 2026-02-22
 draft: false
 tags:
@@ -7,7 +7,7 @@ tags:
     - literary fiction
     - classic
     - spanish
-description: "Love in the Time of Cholera reminds us that obsession does not equal love, but it can be just as strong a feeling. Funny, captivating, incredibly well-written, it's no wonder Márquez established himself as such a literary powerhouse not just in Latin America, but around the world."
+description: "El Amor en los Tiempos del Cólera reminds us that obsession does not equal love, but it can be just as strong a feeling. Funny, captivating, incredibly well-written, it's no wonder Márquez established himself as such a literary powerhouse not just in Latin America, but around the world."
 bookCover: true
 showAuthor: false
 showComments: true
