@@ -7,7 +7,7 @@ tags:
     - spanish
     - mexican literature
     - literary fiction
-description: ""
+description: "A difficult but rewarding read about memories and going mad, with the Mexican Revolution as background scenery."
 bookCover: true
 showAuthor: false
 showComments: true
