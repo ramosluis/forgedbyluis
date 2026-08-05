@@ -8,9 +8,11 @@ tags:
     - magical realism
     - classics
 description: "Toni Morrison's Beloved had impossibly high expectations going in. It exceeded them, and I'm still thinking about why."
+summary: "The hardest book I've actually loved. Shifting timelines, poetic prose, and with a heavy historical context. I know I missed things, meaning I'll read it again."
 bookCover: true
 showAuthor: false
 showComments: true
+showTableOfContents: false
 ---
 This was my first Toni Morrison book, and the expectations were incredibly high. I'd only ever read and heard good thing about Morrison's writing, her beautiful and elegant prose, her sophisticated plot structures, and a myriad of other praises.
 

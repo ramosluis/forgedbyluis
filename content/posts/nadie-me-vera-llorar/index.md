@@ -1,5 +1,5 @@
 ---
-title: "Nadie Me Verá Llorar - Cristina Rivera Garza"
+title: "Nadie me verá llorar - Cristina Rivera Garza"
 date: 2026-07-25
 draft: false
 tags:
@@ -7,10 +7,12 @@ tags:
     - spanish
     - mexican literature
     - literary fiction
-description: "A difficult but rewarding read about memories and going mad, with the Mexican Revolution as background scenery."
+description: "A second chance with Rivera Garza's Nadie me verá llorar. The first attempt earned one star, but the second made me realize how great it actually is."
+summary: "I mentally gave up on this on my first read, giving it one star. My second attempt, however, made me realize how much of a technical masterpiece this book really is."
 bookCover: true
 showAuthor: false
 showComments: true
+showTableOfContents: false
 ---
 Cristina Rivera Garza came into my radar with the boom of her book [El invencible verano de Liliana](https://www.goodreads.com/book/show/57937068-el-invencible-verano-de-liliana), her memoir revolving around the murder of her sister which also touches themes such as feminism and the big issue that are feminicides in Mexico. I haven't read this book , but it's in my TBR, so when [Nadie me verá llorar](https://www.goodreads.com/book/show/219878786-nadie-me-ver-llorar) was selected at my book club for our june read I was pretty excited about it.
 

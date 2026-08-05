@@ -8,9 +8,11 @@ tags:
     - spanish
     - mexican literature
 description: "Carlos Fuentes's Aura is a masterclass eerie, unsettling storytelling. My review of this book."
+summary: "Gothic, eerie, and close in feel to a survival horror game. The ending arrives too fast, but I'd still hand this to anyone in a reading slump."
 bookCover: true
 showAuthor: false
 showComments: true
+showTableOfContents: false
 ---
 I'm ashamed to say I haven't read a lot of Mexican literature, but I'm working on it, and Aura by Carlos Fuentes doesn't disappoint. I knew nothing about it until someone recommended it for my book club. I went in completely blind, and it was great. The story is told in the second person, which creates a weird sensation while reading "you walk here", "you open the door", "you are surprised". It's one of those books that makes me so happy I don't have [aphantasia](https://en.wikipedia.org/wiki/Aphantasia) because it really made me feel like I *was* the protagonist, and I was the one doing everything being narrated.
 
