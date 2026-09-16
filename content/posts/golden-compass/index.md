@@ -9,7 +9,7 @@ series:
     - "His Dark Materials"
 series_order: 1
 description: "The Golden Compass, book 1 of the 'His Dark Materials' trilogy is a great entry point for any reader, leaning into its core themes to deliver a fast paced and entertaining narrative. My review of this book dives deeper into this."
-summary: "A re-read to finally finish the trilogy. Lyra holds up, Mrs. Coulter is exactly the kind of character I love in books, and Iorek Byrnison is still the coolest character in the book."
+summary: "A re-read to finally finish the trilogy. Lyra holds up, Mrs. Coulter is  the kind of character I love in books, and Iorek Byrnison is still the coolest character in the book."
 bookCover: true
 showAuthor: false
 showComments: true
