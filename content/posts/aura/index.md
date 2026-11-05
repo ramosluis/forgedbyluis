@@ -7,8 +7,8 @@ tags:
     - gothic
     - spanish
     - mexican literature
-description: "Carlos Fuentes's Aura is a masterclass eerie, unsettling storytelling. My review of this book."
-summary: "Gothic, eerie, and close in feel to a survival horror game. The ending arrives too fast, but I'd still hand this to anyone in a reading slump."
+description: "Carlos Fuentes's Aura is an eerie, unsettling storytelling with a unique narrative twist."
+summary: "Gothic, eerie, and somehow reminded me of a survival horror game. A short book that reminds us it's all about quality and not quantitiy."
 bookCover: true
 showAuthor: false
 showComments: true

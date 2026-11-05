@@ -6,6 +6,7 @@ tags:
     - books
     - wrap up
 description: "A recap of the first half of 2025. Including stats, graphs, and awards."
+summary: "My honest attempt at a booktube/booktok/bookwhatever tag. This was more effort than I thought it'd be."
 showAuthor: false
 showComments: true
 ---
