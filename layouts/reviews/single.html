@@ -1,0 +1,67 @@
+{{ define "main" }}
+  {{ $book := .Params.book }}
+  <section class="section pt-10">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+
+          <a class="text-text-light dark:text-darkmode-text-light mb-8 inline-block text-sm"
+             href="{{ .CurrentSection.RelPermalink }}">← All reviews</a>
+
+          <!-- Header: cover + book details -->
+          <header class="border-border dark:border-darkmode-border mb-10 flex flex-col gap-10 border-b pb-10 sm:flex-row sm:items-end">
+            {{ with .Resources.GetMatch "featured*" }}
+              {{ $cover := .Fill "460x690 webp" }}
+              <img class="w-48 shrink-0 rounded shadow-lg sm:w-56"
+                   src="{{ $cover.RelPermalink }}"
+                   width="{{ $cover.Width }}" height="{{ $cover.Height }}"
+                   alt="Cover of {{ $.Title }}" />
+            {{ end }}
+
+            <div>
+              <h1 class="mb-2">{{ .Title }}</h1>
+              {{ with $book.author }}
+                <p class="text-text-light dark:text-darkmode-text-light mb-5 text-xl">{{ . }}</p>
+              {{ end }}
+
+              <ul class="text-text-light dark:text-darkmode-text-light mb-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+                {{ if isset $book "rating" }}
+                  <li>{{ partial "rating" $book.rating }}</li>
+                {{ end }}
+                <li>{{ time.Format ":date_long" .Date }}</li>
+                <li>{{ .ReadingTime }} min read</li>
+                {{ with $book.original_language }}
+                  <li>Original language: {{ . }}</li>
+                {{ end }}
+              </ul>
+
+              {{ with .GetTerms "tags" }}
+                <ul class="flex flex-wrap gap-2">
+                  {{ range . }}
+                    <li>
+                      <a class="bg-light dark:bg-darkmode-light rounded-full px-3 py-1 text-sm"
+                         href="{{ .RelPermalink }}">{{ .LinkTitle | humanize }}</a>
+                    </li>
+                  {{ end }}
+                </ul>
+              {{ end }}
+            </div>
+          </header>
+
+          <!-- The review itself, in the serif font -->
+          <div class="content font-secondary max-w-2xl prose-p:text-lg prose-li:text-lg">
+            {{ .Content }}
+          </div>
+
+          {{ with $book.goodreads }}
+            <a class="btn btn-outline-primary btn-sm mt-10" href="{{ . }}" target="_blank" rel="noopener">
+              On Goodreads ↗
+            </a>
+          {{ end }}
+
+          {{/* Giscus comments get added here in a later step */}}
+        </article>
+      </div>
+    </div>
+  </section>
+{{ end }}

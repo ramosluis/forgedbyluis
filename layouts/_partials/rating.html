@@ -1,0 +1,11 @@
+{{- /* Renders a 1–5 star rating, or "DNF" for 0. Usage: partial "rating" 4 */ -}}
+{{- $r := int . -}}
+{{- if eq $r 0 -}}
+  <span class="font-semibold uppercase tracking-wide">DNF</span>
+{{- else -}}
+  <span class="text-primary dark:text-darkmode-primary" role="img" aria-label="{{ $r }} out of 5 stars">
+    {{- range seq 5 -}}
+      <i class="fa-{{ if le . $r }}solid{{ else }}regular{{ end }} fa-star" aria-hidden="true"></i>
+    {{- end -}}
+  </span>
+{{- end -}}
