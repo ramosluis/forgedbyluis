@@ -1,0 +1,110 @@
+{{ define "main" }}
+  <section class="section pt-14">
+    <div class="container">
+
+      <!-- Intro -->
+      <div class="mb-16 max-w-3xl">
+        <h1 class="mb-5">{{ .Title }}</h1>
+        <div class="font-secondary text-text-light dark:text-darkmode-text-light text-xl leading-relaxed">
+          {{ .Content }}
+        </div>
+      </div>
+
+      <div class="row gx-5">
+        <!-- Feed -->
+        <div class="lg:col-8">
+          <div class="border-border dark:border-darkmode-border flex flex-wrap items-baseline justify-between gap-3 border-b pb-4">
+            <h2 class="h3 mb-0">Latest writing</h2>
+            <nav class="flex flex-wrap gap-2 text-sm" aria-label="Browse by kind">
+              {{ range site.Params.mainSections }}
+                {{ with site.GetPage . }}
+                  <a class="border-border dark:border-darkmode-border rounded-full border px-3 py-1"
+                     href="{{ .RelPermalink }}">{{ .Title }}</a>
+                {{ end }}
+              {{ end }}
+            </nav>
+          </div>
+
+          {{ $posts := where site.RegularPages "Section" "in" site.Params.mainSections }}
+          {{ $paginator := .Paginate $posts }}
+          {{ range $paginator.Pages }}
+            {{ partial "post-row" . }}
+          {{ end }}
+          {{ partial "components/pagination.html" . }}
+        </div>
+
+        <!-- Sidebar: next step -->
+                <aside class="lg:col-4 mt-14 lg:mt-0">
+
+          <!-- Projects -->
+          {{ with site.GetPage "projects" }}
+            {{ with .Sections }}
+              <section class="mb-12">
+                <h2 class="font-primary text-text-light dark:text-darkmode-text-light mb-4 text-sm font-semibold uppercase tracking-wider">Projects</h2>
+                <ul class="space-y-3">
+                  {{ range . }}
+                    {{ $updates := .RegularPages }}
+                    <li>
+                      <a class="bg-light dark:bg-darkmode-light block rounded-lg px-5 py-4" href="{{ .RelPermalink }}">
+                        <span class="flex items-center justify-between gap-3">
+                          <span class="font-secondary text-text-dark dark:text-darkmode-text-dark text-lg">{{ .Title }}</span>
+                          {{ with .Params.status }}
+                            <span class="text-project dark:text-darkmode-project text-xs font-semibold uppercase">{{ . }}</span>
+                          {{ end }}
+                        </span>
+                        <span class="text-text-light dark:text-darkmode-text-light text-sm">
+                          {{ len $updates }} update{{ if ne (len $updates) 1 }}s{{ end }}
+                          {{ range first 1 $updates }} · last {{ time.Format ":date_medium" .Date }}{{ end }}
+                        </span>
+                      </a>
+                    </li>
+                  {{ end }}
+                </ul>
+              </section>
+            {{ end }}
+          {{ end }}
+
+          <!-- Bookshelf: covers of the latest reviews -->
+          {{ with site.GetPage "reviews" }}
+            <section class="mb-12">
+              <div class="mb-4 flex items-baseline justify-between">
+                <h2 class="font-primary text-text-light dark:text-darkmode-text-light text-sm font-semibold uppercase tracking-wider">Bookshelf</h2>
+                <a class="text-primary dark:text-darkmode-primary text-sm" href="{{ .RelPermalink }}">All reviews →</a>
+              </div>
+              <div class="grid grid-cols-4 gap-3">
+                {{ range first 8 .RegularPages }}
+                  {{ $review := . }}
+                  {{ with .Resources.GetMatch "featured*" }}
+                    {{ $img := .Fill "120x180 webp" }}
+                    <a href="{{ $review.RelPermalink }}" title="{{ $review.Title }}">
+                      <img class="w-full rounded shadow-md" src="{{ $img.RelPermalink }}"
+                           width="{{ $img.Width }}" height="{{ $img.Height }}"
+                           alt="Cover of {{ $review.Title }}" loading="lazy" />
+                    </a>
+                  {{ end }}
+                {{ end }}
+              </div>
+            </section>
+          {{ end }}
+
+                    <!-- Currently reading (optional list, set in content/english/_index.md) -->
+          {{ with .Params.currently_reading }}
+            <section class="bg-light dark:bg-darkmode-light rounded-lg p-5">
+              <h2 class="font-primary text-primary dark:text-darkmode-primary mb-3 text-sm font-semibold uppercase tracking-wider">Currently reading</h2>
+              <ul class="space-y-2">
+                {{ range . }}
+                  <li class="font-secondary text-text-dark dark:text-darkmode-text-dark text-lg leading-snug">
+                    {{ .title }}
+                    {{ with .author }}
+                      <span class="font-primary text-text-light dark:text-darkmode-text-light block text-sm">{{ . }}</span>
+                    {{ end }}
+                  </li>
+                {{ end }}
+              </ul>
+            </section>
+          {{ end }}
+        </aside>
+      </div>
+    </div>
+  </section>
+{{ end }}

@@ -11,6 +11,8 @@
   --color-border: #E7E2DC;
   --color-light: #F3F0EB;
   --color-dark: #1F1C1A;
+  --color-project: #2B6658;
+  --color-musing: #8A5A1E;
   --color-text: #1F1C1A;
   --color-text-dark: #1F1C1A;
   --color-text-light: #68625D;
@@ -21,6 +23,8 @@
   --color-darkmode-border: #34313B;
   --color-darkmode-light: #211F26;
   --color-darkmode-dark: #ECE8F1;
+  --color-darkmode-project: #8FD1BF;
+  --color-darkmode-musing: #E3B877;
   --color-darkmode-text: #ECE8F1;
   --color-darkmode-text-dark: #FFFFFF;
   --color-darkmode-text-light: #A49DAD;

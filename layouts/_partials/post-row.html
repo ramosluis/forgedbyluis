@@ -1,0 +1,47 @@
+{{- /* One post in a feed. Usage: partial "post-row" . */ -}}
+{{ $kinds := dict
+  "reviews"  (dict "label" "Review"  "color" "text-primary dark:text-darkmode-primary")
+  "projects" (dict "label" "Project" "color" "text-project dark:text-darkmode-project")
+  "musings"  (dict "label" "Musing"  "color" "text-musing dark:text-darkmode-musing")
+}}
+{{ $kind := index $kinds .Section }}
+
+<article class="border-border dark:border-darkmode-border flex gap-6 border-b py-7">
+  <div class="min-w-0 flex-1">
+    <p class="text-text-light dark:text-darkmode-text-light mb-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+      {{ with $kind }}
+        <span class="{{ .color }} font-semibold uppercase tracking-wider">{{ .label }}</span>
+      {{ end }}
+      {{ if eq .Section "projects" }}
+        {{ with .Parent }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+      {{ end }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ time.Format ":date_medium" .Date }}</time>
+      {{ with .Params.book }}
+        {{ if isset . "rating" }}{{ partial "rating" .rating }}{{ end }}
+      {{ end }}
+    </p>
+
+    <h3 class="h4 mb-2">
+      <a href="{{ .RelPermalink }}">
+        {{ .Title }}
+        {{ with .Params.book.author }}
+          <span class="text-text-light dark:text-darkmode-text-light font-normal">— {{ . }}</span>
+        {{ end }}
+      </a>
+    </h3>
+
+    <p class="text-text-light dark:text-darkmode-text-light line-clamp-3">{{ .Summary | plainify }}</p>
+  </div>
+
+  {{ with .Resources.GetMatch "featured*" }}
+    {{ if eq $.Section "reviews" }}
+      {{ $img := .Fill "160x240 webp" }}
+      <img class="w-20 shrink-0 self-start rounded shadow-md" src="{{ $img.RelPermalink }}"
+           width="{{ $img.Width }}" height="{{ $img.Height }}" alt="Cover of {{ $.Title }}" loading="lazy" />
+    {{ else }}
+      {{ $img := .Fill "264x198 webp" }}
+      <img class="hidden w-32 shrink-0 self-start rounded-lg sm:block" src="{{ $img.RelPermalink }}"
+           width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" loading="lazy" />
+    {{ end }}
+  {{ end }}
+</article>

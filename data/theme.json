@@ -6,7 +6,9 @@
         "body": "#FBFAF7",
         "border": "#E7E2DC",
         "light": "#F3F0EB",
-        "dark": "#1F1C1A"
+        "dark": "#1F1C1A",
+        "project": "#2B6658",
+        "musing": "#8A5A1E"
       },
       "text_color": {
         "text": "#1F1C1A",
@@ -20,7 +22,9 @@
         "body": "#18171C",
         "border": "#34313B",
         "light": "#211F26",
-        "dark": "#ECE8F1"
+        "dark": "#ECE8F1",
+        "project": "#8FD1BF",
+        "musing": "#E3B877"
       },
       "text_color": {
         "text": "#ECE8F1",
