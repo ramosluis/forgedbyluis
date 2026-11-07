@@ -1,0 +1,28 @@
+{{ define "main" }}
+  {{/* Series list in reading order; everything else newest first */}}
+  {{ $pages := .Pages }}
+  {{ if eq .Data.Plural "series" }}
+    {{ $pages = sort .Pages "Params.series_order" }}
+  {{ end }}
+
+  <section class="section pt-14">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-8">
+          <p class="text-text-light dark:text-darkmode-text-light mb-2 text-sm font-semibold uppercase tracking-wider">
+            {{ .Data.Singular | humanize }}
+          </p>
+          <h1 class="mb-10">{{ .Title }}</h1>
+
+          {{ $paginator := .Paginate $pages }}
+          <div class="border-border dark:border-darkmode-border border-t">
+            {{ range $paginator.Pages }}
+              {{ partial "post-row" . }}
+            {{ end }}
+          </div>
+          {{ partial "components/pagination.html" . }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
