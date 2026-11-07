@@ -28,9 +28,14 @@ weight = 1
 [[footer]]
 name = "Contact"
 url = "/contact/"
+weight = 3
+
+[[footer]]
+name = "My rating system"
+url = "/my-rating-system/"
 weight = 2
 
 [[footer]]
 name = "RSS"
 url = "/index.xml"
-weight = 3
+weight = 4
