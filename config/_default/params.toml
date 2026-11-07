@@ -2,8 +2,9 @@
 # favicon module: https://github.com/gethugothemes/hugo-modules/tree/master/images#favicon-implementation
 favicon = "images/favicon.png"
 # logo module: https://github.com/gethugothemes/hugo-modules/tree/master/images#logo-implementation
-logo = "images/logo.png"
-logo_darkmode = "images/logo-darkmode.png"
+# no logo for now: with these empty, the theme shows logo_text instead
+logo = ""
+logo_darkmode = ""
 # use `px` or `x` with logo_width, example: "100px".
 # Note: logo_width is not work with .svg file
 logo_width = "160px"
@@ -11,7 +12,7 @@ logo_height = "32px"
 # if logo_webp set false, will not generate WEBP version of logo | default is true
 logo_webp = true
 # logo text will only show when logo is missing.
-logo_text = "Hugoplate"
+logo_text = "Forged by Luis"
 # navbar fixed to top
 navbar_fixed = true
 # theme-mode
@@ -27,7 +28,7 @@ google_adsense = ""     # example: ca-pub-xxxxxxxxxxxxxxxx
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>"
 custom_script = ""
 # copyright
-copyright = "Designed & Developed by [Zeon Studio](https://zeon.studio)"
+copyright = "© 2026 Luis · Forged by Luis"
 
 # Preloader
 # preloader module: https://github.com/gethugothemes/hugo-modules/tree/master/components/preloader
@@ -37,7 +38,7 @@ preloader = "" # use jpg, png, svg or gif format.
 
 # Navigation button
 [navigation_button]
-enable = true
+enable = false # setting to false removes the Github button in the header
 label = "Github"
 link = "https://github.com/zeon-studio/hugoplate"
 
@@ -57,8 +58,8 @@ exclude = []
 # search module: https://github.com/gethugothemes/hugo-modules/tree/master/search
 [search]
 enable = true
-primary_color = "#121212"
-include_sections = ["blog"]
+primary_color = "#5E3B86"
+include_sections = ["reviews", "projects", "musings"]
 show_image = true
 show_description = true
 show_tags = true
@@ -67,17 +68,17 @@ show_categories = true
 # announcement
 # announcement module: https://github.com/gethugothemes/hugo-modules/tree/master/components/announcement
 [announcement]
-enable = true
+enable = false # setting to false removes the "Loving Hugoplate?" bar
 expire_days = 7
 content = "<span class='text-center block'>♥️ Loving Hugoplate? <a class='underline' href='https://github.com/zeon-studio/hugoplate' target='_blank' rel='noopener'>Please ⭐️ on Github</a></span>"
 
 # seo meta data for OpenGraph / Twitter Card
 # seo module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo
 [metadata]
-keywords = ["Boilerplate", "Hugo"]
-description = "Hugo & Tailwindcss Starter"
-author = "zeon.studio"
-twitter = "zeon_studio"
+keywords = ["book reviews", "books", "3D printing", "personal blog"]
+description = "Book reviews, project logs, and musings by Luis."
+author = "Luis"
+twitter = ""
 image = "images/og-image.png"
 
 
@@ -125,6 +126,6 @@ mailchimp_form_name = "b_463ee871f45d2d93748e77cad_a0a2c6d074"
 
 # OpenRemark Comments
 [open_remark]
-enable = true
+enable = false # setting to false disables Hugoplate's own comment system; I'm using Giscus
 site_key = "cmq51sse6000504l2761vcywi"                 # your site key from the OpenRemark dashboard
 embed_url = "https://open-remark.zeon.studio/embed.js" # OpenRemark embed.js URL | Make sure it didn't change

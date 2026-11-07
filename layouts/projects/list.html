@@ -1,0 +1,76 @@
+{{ define "main" }}
+  <section class="section pt-14">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+
+          {{ if eq . .FirstSection }}
+            {{/* ===== /projects/ : one card per project folder ===== */}}
+            <h1 class="mb-4">{{ .Title }}</h1>
+            {{ with .Params.description }}
+              <p class="font-secondary text-text-light dark:text-darkmode-text-light mb-12 text-xl">{{ . }}</p>
+            {{ end }}
+
+            <div class="grid gap-5 md:grid-cols-2">
+              {{ range .Sections }}
+                {{ $updates := .RegularPages }}
+                <a class="bg-light dark:bg-darkmode-light block rounded-lg p-6" href="{{ .RelPermalink }}">
+                  <span class="mb-2 flex items-center justify-between gap-3">
+                    <span class="font-secondary text-text-dark dark:text-darkmode-text-dark text-2xl">{{ .Title }}</span>
+                    {{ with .Params.status }}
+                      <span class="text-project dark:text-darkmode-project text-xs font-semibold uppercase">{{ . }}</span>
+                    {{ end }}
+                  </span>
+                  {{ with .Params.description }}
+                    <span class="text-text dark:text-darkmode-text mb-3 block">{{ . }}</span>
+                  {{ end }}
+                  <span class="text-text-light dark:text-darkmode-text-light text-sm">
+                    {{ len $updates }} update{{ if ne (len $updates) 1 }}s{{ end }}
+                    {{ range first 1 $updates }} · last {{ time.Format ":date_medium" .Date }}{{ end }}
+                  </span>
+                </a>
+              {{ else }}
+                <p>No projects yet.</p>
+              {{ end }}
+            </div>
+
+          {{ else }}
+            {{/* ===== /projects/<name>/ : the project and its updates ===== */}}
+            <a class="text-text-light dark:text-darkmode-text-light mb-8 inline-block text-sm"
+               href="{{ .Parent.RelPermalink }}">← All projects</a>
+
+            <div class="mb-4 flex flex-wrap items-center gap-4">
+              <h1 class="mb-0">{{ .Title }}</h1>
+              {{ with .Params.status }}
+                <span class="bg-light dark:bg-darkmode-light text-project dark:text-darkmode-project rounded-full px-3 py-1 text-xs font-semibold uppercase">{{ . }}</span>
+              {{ end }}
+            </div>
+            {{ with .Params.description }}
+              <p class="font-secondary text-text-light dark:text-darkmode-text-light mb-6 text-xl">{{ . }}</p>
+            {{ end }}
+            {{ with .Content }}
+              <div class="content font-secondary mb-10 max-w-2xl">{{ . }}</div>
+            {{ end }}
+
+            <h2 class="font-primary text-text-light dark:text-darkmode-text-light border-border dark:border-darkmode-border mt-12 border-b pb-4 text-sm font-semibold uppercase tracking-wider">Updates</h2>
+            <ol>
+              {{ range $i, $p := .RegularPages.ByDate }}
+                <li class="border-border dark:border-darkmode-border flex gap-6 border-b py-7">
+                  <span class="font-secondary text-project dark:text-darkmode-project w-8 shrink-0 text-3xl">{{ add $i 1 }}</span>
+                  <div class="min-w-0">
+                    <h3 class="h4 mb-1"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    <p class="text-text-light dark:text-darkmode-text-light mb-2 text-sm">{{ time.Format ":date_medium" .Date }}</p>
+                    <p class="text-text-light dark:text-darkmode-text-light mb-0">{{ .Summary | plainify }}</p>
+                  </div>
+                </li>
+              {{ else }}
+                <li class="py-7">No updates yet.</li>
+              {{ end }}
+            </ol>
+          {{ end }}
+
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
