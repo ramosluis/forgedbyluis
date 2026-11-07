@@ -14,3 +14,14 @@
     font-weight: 500;
   }
 }
+
+/* Inline book covers inside posts, e.g. {{< figure ... class="inline-book-cover" >}} */
+@layer components {
+  .content .inline-book-cover {
+    max-width: 200px;
+    margin-inline: auto;
+  }
+  .content .inline-book-cover img {
+    border-radius: 0.25rem;
+  }
+}

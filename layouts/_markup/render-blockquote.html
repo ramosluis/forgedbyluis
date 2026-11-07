@@ -1,0 +1,33 @@
+{{- /* Renders Obsidian/GitHub callouts (> [!type] Title). Plain > quotes stay normal quotes. */ -}}
+{{- if eq .Type "alert" -}}
+  {{- $styles := dict
+    "note"    (dict "icon" "fa-circle-info"          "color" "text-primary dark:text-darkmode-primary" "border" "border-primary dark:border-darkmode-primary")
+    "info"    (dict "icon" "fa-circle-info"          "color" "text-primary dark:text-darkmode-primary" "border" "border-primary dark:border-darkmode-primary")
+    "tip"     (dict "icon" "fa-lightbulb"            "color" "text-project dark:text-darkmode-project" "border" "border-project dark:border-darkmode-project")
+    "success" (dict "icon" "fa-circle-check"         "color" "text-project dark:text-darkmode-project" "border" "border-project dark:border-darkmode-project")
+    "warning" (dict "icon" "fa-triangle-exclamation" "color" "text-musing dark:text-darkmode-musing"   "border" "border-musing dark:border-darkmode-musing")
+    "caution" (dict "icon" "fa-triangle-exclamation" "color" "text-musing dark:text-darkmode-musing"   "border" "border-musing dark:border-darkmode-musing")
+    "quote"   (dict "icon" "fa-quote-left"           "color" "text-text-light dark:text-darkmode-text-light" "border" "border-border dark:border-darkmode-border")
+  -}}
+  {{- $s := index $styles .AlertType | default (index $styles "note") -}}
+  {{- $title := .AlertTitle | default (.AlertType | title) -}}
+  {{- $box := printf "bg-light dark:bg-darkmode-light my-8 rounded-r-lg border-l-4 px-5 py-4 [&>p:last-child]:mb-0 %s" $s.border -}}
+
+  {{- if .AlertSign -}}
+    <details class="{{ $box }}" {{ if eq .AlertSign "+" }}open{{ end }}>
+      <summary class="{{ $s.color }} font-primary cursor-pointer text-sm font-semibold uppercase tracking-wider">
+        <i class="fa-solid {{ $s.icon }} mr-2" aria-hidden="true"></i>{{ $title }}
+      </summary>
+      <div class="mt-3">{{ .Text }}</div>
+    </details>
+  {{- else -}}
+    <div class="{{ $box }}" role="note">
+      <p class="{{ $s.color }} font-primary !mb-2 text-sm font-semibold uppercase tracking-wider">
+        <i class="fa-solid {{ $s.icon }} mr-2" aria-hidden="true"></i>{{ $title }}
+      </p>
+      {{ .Text }}
+    </div>
+  {{- end -}}
+{{- else -}}
+  <blockquote>{{ .Text }}</blockquote>
+{{- end -}}

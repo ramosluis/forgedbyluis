@@ -13,7 +13,7 @@ book:
     author: "Philip Pullman"
     rating: 3
 ---
-Philip Pullman's second entry in the *His Dark Materials* series reads very much like the middle book of a trilogy. [The first book had some really good high points for me](/posts/golden-compass), some of these were maintained during *The Subtle Knife*, while others were set aside. Let's get into it.
+Philip Pullman's second entry in the *His Dark Materials* series reads very much like the middle book of a trilogy. [The first book had some really good high points for me](/reviews/golden-compass), some of these were maintained during *The Subtle Knife*, while others were set aside. Let's get into it.
 
 *The Golden Compass* is all about Lyra, she's still here in *The Subtle Knife*, but we get a deuteragonist, a scrappy, quick-on-his-feet-with-a-tragic-life-but-noble-heart kid named Will. While I like Will, I didn't enjoy his character as much as I did Lyra **in the first book**. I felt like Pullman played around a bit with Lyra in this book, she seemed to be much more reserved, scared even. I guess it makes sense since she's exploring a new and unknown world, but it just took me out of it throughout the book. The other thing that was missing for me were the dæmons, the whole severing plotline from the first book was really interesting and then in this book it seems like dæmons are a secondary plot device, so not a huge fan of that.
 
