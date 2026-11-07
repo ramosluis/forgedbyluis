@@ -1,0 +1,11 @@
+{{- /* Replaces Hugo's built-in figure: same src/alt/caption/class params, but the image opens in a lightbox. */ -}}
+{{- $src := .Get "src" -}}
+{{- $res := .Page.Resources.Get $src -}}
+{{- with $res }}{{ $src = .RelPermalink }}{{ end -}}
+<figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
+  <a href="{{ $src }}" class="glightbox"{{ with .Get "caption" }} data-description="{{ . | plainify }}"{{ end }}>
+    <img src="{{ $src }}" alt="{{ .Get "alt" }}" loading="lazy"
+         {{- with $res }} width="{{ .Width }}" height="{{ .Height }}"{{ end }} />
+  </a>
+  {{ with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

@@ -1,10 +1,12 @@
 {{- /* Optional featured photo with alt text and caption. Usage: partial "featured-photo" . */ -}}
 {{ with .Resources.GetMatch "featured*" }}
   {{ $img := .Resize "1400x webp" }}
-  <figure class="mb-10">
-    <img class="mx-auto max-h-[36rem] w-auto rounded-lg" src="{{ $img.RelPermalink }}"
-         width="{{ $img.Width }}" height="{{ $img.Height }}"
-         alt="{{ $.Params.featured_alt | default "" }}" />
+    <figure class="mb-10">
+    <a href="{{ .RelPermalink }}" class="glightbox"{{ with $.Params.featured_caption }} data-description="{{ . }}"{{ end }}>
+      <img class="mx-auto max-h-[36rem] w-auto rounded-lg" src="{{ $img.RelPermalink }}"
+           width="{{ $img.Width }}" height="{{ $img.Height }}"
+           alt="{{ $.Params.featured_alt | default "" }}" />
+    </a>
     {{ with $.Params.featured_caption }}
       <figcaption class="text-text-light dark:text-darkmode-text-light mt-2 text-center text-sm">{{ . }}</figcaption>
     {{ end }}
