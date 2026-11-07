@@ -1,1 +1,16 @@
 /* Add your own custom styles here */
+
+/* Lighter headings: Newsreader looks best at medium weight.
+   Inside @layer base so utility classes like font-semibold still win. */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+  }
+}
+
+/* Headings inside post text (.content uses Tailwind's typography styles) */
+@layer components {
+  .content :where(h1, h2, h3, h4) {
+    font-weight: 500;
+  }
+}

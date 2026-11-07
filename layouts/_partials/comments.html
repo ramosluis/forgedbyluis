@@ -1,0 +1,52 @@
+{{- /* Giscus comments that follow the site's light/dark toggle. Usage: partial "comments" . */ -}}
+{{ with site.Params.giscus }}
+  {{ if .enable }}
+    <section class="border-border dark:border-darkmode-border mt-16 border-t pt-10" aria-label="Comments">
+      <div class="giscus"></div>
+    </section>
+    <script>
+      (function () {
+        const theme = () =>
+          document.documentElement.classList.contains("dark") ? "dark" : "light";
+
+        // Build the Giscus script tag with the theme matching the site right now
+        const s = document.createElement("script");
+        s.src = "https://giscus.app/client.js";
+        s.async = true;
+        s.crossOrigin = "anonymous";
+        const attrs = {
+          "data-repo": {{ .repo }},
+          "data-repo-id": {{ .repo_id }},
+          "data-category": {{ .category }},
+          "data-category-id": {{ .category_id }},
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "bottom",
+          "data-lang": "en",
+          "data-loading": "lazy",
+          "data-theme": theme(),
+          {{ with $.Params.giscus_term }}
+          "data-mapping": "specific",
+          "data-term": {{ . }},
+          {{ else }}
+          "data-mapping": "pathname",
+          {{ end }}
+        };
+        for (const [k, v] of Object.entries(attrs)) s.setAttribute(k, v);
+        document.body.appendChild(s);
+
+        // When the visitor flips the toggle, tell the Giscus frame to switch too
+        new MutationObserver(() => {
+          const frame = document.querySelector("iframe.giscus-frame");
+          if (frame) {
+            frame.contentWindow.postMessage(
+              { giscus: { setConfig: { theme: theme() } } },
+              "https://giscus.app"
+            );
+          }
+        }).observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+      })();
+    </script>
+  {{ end }}
+{{ end }}
