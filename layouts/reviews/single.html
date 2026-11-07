@@ -48,6 +48,28 @@
             </div>
           </header>
 
+                    <!-- Series: other reviews in the same series -->
+          {{ range .GetTerms "series" }}
+            <aside class="bg-light dark:bg-darkmode-light mb-10 max-w-2xl rounded-lg p-5">
+              <p class="text-text-light dark:text-darkmode-text-light mb-3 text-sm">
+                {{ with $.Params.series_order }}Book {{ . }} of{{ else }}Part of{{ end }}
+                <a class="text-primary dark:text-darkmode-primary font-semibold" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+              </p>
+              <ol class="space-y-1">
+                {{ range sort .Pages "Params.series_order" }}
+                  <li class="flex gap-3">
+                    <span class="text-text-light dark:text-darkmode-text-light w-5 shrink-0">{{ .Params.series_order }}</span>
+                    {{ if eq . $ }}
+                      <span class="font-semibold" aria-current="page">{{ .Title }} <span class="text-text-light dark:text-darkmode-text-light font-normal">(this review)</span></span>
+                    {{ else }}
+                      <a class="underline-offset-4 hover:underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    {{ end }}
+                  </li>
+                {{ end }}
+              </ol>
+            </aside>
+          {{ end }}
+
           <!-- The review itself, in the serif font -->
           <div class="content font-secondary max-w-2xl prose-p:text-lg prose-li:text-lg">
             {{ .Content }}

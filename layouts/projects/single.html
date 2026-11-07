@@ -1,0 +1,93 @@
+{{ define "main" }}
+  {{ $project := .Parent }}
+  {{ $updates := $project.RegularPages.ByDate }}
+
+  {{/* Find this update's position (1, 2, 3…) within the project */}}
+  {{ $n := 0 }}
+  {{ range $i, $p := $updates }}
+    {{ if eq $p $ }}{{ $n = add $i 1 }}{{ end }}
+  {{ end }}
+
+  <section class="section pt-10">
+    <div class="container">
+      <p class="text-text-light dark:text-darkmode-text-light mb-8 text-sm">
+        <a href="{{ $project.Parent.RelPermalink }}">Projects</a> /
+        <a href="{{ $project.RelPermalink }}">{{ $project.Title }}</a>
+      </p>
+
+      <div class="row gx-5">
+        <!-- The update -->
+        <article class="lg:col-8">
+          <p class="text-text-light dark:text-darkmode-text-light mb-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+            <span class="text-project dark:text-darkmode-project font-semibold uppercase tracking-wider">Update {{ $n }}</span>
+            <span>{{ time.Format ":date_long" .Date }}</span>
+            <span>{{ .ReadingTime }} min read</span>
+          </p>
+          <h1 class="mb-8">{{ .Title }}</h1>
+
+          {{ with .Resources.GetMatch "featured*" }}
+            {{ $img := .Resize "1400x webp" }}
+            <figure class="mb-10">
+              <img class="mx-auto max-h-[36rem] w-auto rounded-lg" src="{{ $img.RelPermalink }}"
+                   width="{{ $img.Width }}" height="{{ $img.Height }}"
+                   alt="{{ $.Params.featured_alt | default "" }}" />
+              {{ with $.Params.featured_caption }}
+                <figcaption class="text-text-light dark:text-darkmode-text-light mt-2 text-sm">{{ . }}</figcaption>
+              {{ end }}
+            </figure>
+          {{ end }}
+
+          <div class="content font-secondary prose-p:text-lg prose-li:text-lg">
+            {{ .Content }}
+          </div>
+
+          {{/* Giscus comments get added here in a later step */}}
+        </article>
+
+        <!-- Project panel -->
+        <aside class="lg:col-4 mt-14 lg:mt-0">
+          <div class="bg-light dark:bg-darkmode-light rounded-lg p-6 lg:sticky lg:top-28">
+            <div class="mb-2 flex items-center justify-between gap-3">
+              <a class="font-secondary text-text-dark dark:text-darkmode-text-dark text-xl" href="{{ $project.RelPermalink }}">{{ $project.Title }}</a>
+              {{ with $project.Params.status }}
+                <span class="text-project dark:text-darkmode-project text-xs font-semibold uppercase">{{ . }}</span>
+              {{ end }}
+            </div>
+            {{ with $project.Params.description }}
+              <p class="text-text-light dark:text-darkmode-text-light mb-5 text-sm">{{ . }}</p>
+            {{ end }}
+
+            <h2 class="font-primary text-text-light dark:text-darkmode-text-light mb-2 text-xs font-semibold uppercase tracking-wider">All updates</h2>
+            <ol>
+              {{ range $i, $p := $updates }}
+                {{ $current := eq $p $ }}
+                <li>
+                  <a class="flex gap-3 rounded px-3 py-2 {{ if $current }}bg-body dark:bg-darkmode-body text-project dark:text-darkmode-project font-semibold{{ end }}"
+                     href="{{ .RelPermalink }}" {{ if $current }}aria-current="page"{{ end }}>
+                    <span class="w-5 shrink-0 opacity-70">{{ add $i 1 }}</span>
+                    {{ .Title }}
+                  </a>
+                </li>
+              {{ end }}
+            </ol>
+          </div>
+
+          <nav class="mt-5 flex justify-between gap-4 text-sm" aria-label="Project updates">
+            {{ if gt $n 1 }}
+              {{ with index $updates (sub $n 2) }}
+                <a class="text-primary dark:text-darkmode-primary" href="{{ .RelPermalink }}">← Previous update</a>
+              {{ end }}
+            {{ else }}
+              <span></span>
+            {{ end }}
+            {{ if lt $n (len $updates) }}
+              {{ with index $updates $n }}
+                <a class="text-primary dark:text-darkmode-primary" href="{{ .RelPermalink }}">Next update →</a>
+              {{ end }}
+            {{ end }}
+          </nav>
+        </aside>
+      </div>
+    </div>
+  </section>
+{{ end }}

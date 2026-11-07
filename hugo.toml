@@ -18,6 +18,12 @@ defaultContentLanguage = 'en'
 # defaultContentLanguageInSubdir need to be true if you want to use the language code as a subdirectory and language specific 404 page
 defaultContentLanguageInSubdir = false
 
+############################# Taxonomies ############################
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
 ########################### Services #############################
 [services]
 [services.googleAnalytics]
@@ -132,6 +138,9 @@ link = "plugins/font-awesome/v6/brands.css"
 lazy = true
 [[params.plugins.css]]
 link = "plugins/font-awesome/v6/solid.css"
+lazy = true
+[[params.plugins.css]]
+link = "plugins/font-awesome/v6/regular.css"
 lazy = true
 [[params.plugins.css]]
 link = "plugins/font-awesome/v6/icons.css"
