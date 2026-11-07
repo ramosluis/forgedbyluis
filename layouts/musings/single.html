@@ -1,0 +1,36 @@
+{{ define "main" }}
+  <section class="section pt-10">
+    <div class="container">
+      <article class="mx-auto max-w-2xl">
+        <a class="text-text-light dark:text-darkmode-text-light mb-8 inline-block text-sm"
+           href="{{ .CurrentSection.RelPermalink }}">← All musings</a>
+
+        <p class="text-text-light dark:text-darkmode-text-light mb-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+          <span class="text-musing dark:text-darkmode-musing font-semibold uppercase tracking-wider">Musing</span>
+          <span>{{ time.Format ":date_long" .Date }}</span>
+          <span>{{ .ReadingTime }} min read</span>
+        </p>
+        <h1 class="mb-8">{{ .Title }}</h1>
+
+        {{ partial "featured-photo" . }}
+
+        <div class="content font-secondary prose-p:text-lg prose-li:text-lg">
+          {{ .Content }}
+        </div>
+
+        {{ with .GetTerms "tags" }}
+          <ul class="mt-10 flex flex-wrap gap-2">
+            {{ range . }}
+              <li>
+                <a class="bg-light dark:bg-darkmode-light rounded-full px-3 py-1 text-sm"
+                   href="{{ .RelPermalink }}">{{ .LinkTitle | humanize }}</a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+
+        {{/* Giscus comments get added here in a later step */}}
+      </article>
+    </div>
+  </section>
+{{ end }}
