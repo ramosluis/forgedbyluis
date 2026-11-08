@@ -56,27 +56,31 @@
             {{ end }}
           {{ end }}
 
-          <!-- Bookshelf: covers of the latest reviews -->
+          <!-- Bookshelf: covers of 5-star books, newest first -->
           {{ with site.GetPage "reviews" }}
-            <section class="mb-12">
-              <div class="mb-4 flex items-baseline justify-between">
-                <h2 class="font-primary text-text-light dark:text-darkmode-text-light text-sm font-semibold uppercase tracking-wider">Bookshelf</h2>
-                <a class="text-primary dark:text-darkmode-primary text-sm" href="{{ .RelPermalink }}">All reviews →</a>
-              </div>
-              <div class="grid grid-cols-4 gap-3">
-                {{ range first 8 .RegularPages }}
-                  {{ $review := . }}
-                  {{ with .Resources.GetMatch "featured*" }}
-                    {{ $img := .Fill "120x180 webp" }}
-                    <a href="{{ $review.RelPermalink }}" title="{{ $review.Title }}">
-                      <img class="w-full rounded shadow-md" src="{{ $img.RelPermalink }}"
-                           width="{{ $img.Width }}" height="{{ $img.Height }}"
-                           alt="Cover of {{ $review.Title }}" loading="lazy" />
-                    </a>
+            {{ $section := . }}
+            {{ $favorites := where .RegularPages "Params.book.rating" 5 }}
+            {{ with $favorites }}
+              <section class="mb-12">
+                <div class="mb-4 flex items-baseline justify-between">
+                  <h2 class="font-primary text-text-light dark:text-darkmode-text-light text-sm font-semibold uppercase tracking-wider">Five-star reads</h2>
+                  <a class="text-primary dark:text-darkmode-primary text-sm" href="{{ $section.RelPermalink }}">All reviews →</a>
+                </div>
+                <div class="grid grid-cols-4 gap-3">
+                  {{ range first 8 . }}
+                    {{ $review := . }}
+                    {{ with .Resources.GetMatch "featured*" }}
+                      {{ $img := .Fill "120x180 webp" }}
+                      <a href="{{ $review.RelPermalink }}" title="{{ $review.Title }}{{ with $review.Params.book.author }} — {{ . }}{{ end }}">
+                        <img class="w-full rounded shadow-md" src="{{ $img.RelPermalink }}"
+                             width="{{ $img.Width }}" height="{{ $img.Height }}"
+                             alt="Cover of {{ $review.Title }}" loading="lazy" />
+                      </a>
+                    {{ end }}
                   {{ end }}
-                {{ end }}
-              </div>
-            </section>
+                </div>
+              </section>
+            {{ end }}
           {{ end }}
 
           <!-- Currently reading (optional list, set in content/english/_index.md) -->
