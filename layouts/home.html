@@ -67,7 +67,7 @@
                   <a class="text-primary dark:text-darkmode-primary text-sm" href="{{ $section.RelPermalink }}">All reviews →</a>
                 </div>
                 <div class="grid grid-cols-4 gap-3">
-                  {{ range first 8 . }}
+                  {{ range first 8 (shuffle .) }}
                     {{ $review := . }}
                     {{ with .Resources.GetMatch "featured*" }}
                       {{ $img := .Fill "120x180 webp" }}
