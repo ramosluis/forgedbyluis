@@ -12,10 +12,10 @@
 /posts             /                   301
 /posts/index.xml   /index.xml          301
 
-# Every other old post is a review, with the same folder name
-/posts/*           /reviews/:splat     301
-
 # Old book listing pages
 /books/            /reviews/           301
 /books             /reviews/           301
 /tags/books/       /reviews/           301
+
+# Every other old post is a review, with the same folder name
+/posts/*           /reviews/:splat     301
