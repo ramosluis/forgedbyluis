@@ -8,7 +8,11 @@
             <p class="font-secondary text-text-light dark:text-darkmode-text-light mb-10 text-xl">{{ . }}</p>
           {{ end }}
 
-          {{ $paginator := .Paginate .RegularPages }}
+          {{/* This section's own posts, plus posts from elsewhere that ask to be shown here (show_in) */}}
+          {{ $pages := .RegularPages }}
+          {{ $extra := where site.RegularPages "Params.show_in" "intersect" (slice .Section) }}
+          {{ $pages = sort ($pages | union $extra) "Date" "desc" }}
+          {{ $paginator := .Paginate $pages }}
           <div class="border-border dark:border-darkmode-border border-t">
             {{ range $paginator.Pages }}
               {{ partial "post-row" . }}

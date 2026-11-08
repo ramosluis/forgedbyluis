@@ -1,0 +1,21 @@
+# Old Blowfish URLs -> new structure. First matching rule wins, so specific rules come first.
+# 301 = moved permanently (browsers and search engines update to the new URL).
+
+# Wrap-ups moved to Musings
+/posts/2025-mid-year-wrap-up/   /musings/2025-mid-year-wrap-up/   301
+/posts/2025-mid-year-wrap-up    /musings/2025-mid-year-wrap-up/   301
+/posts/2025-q4-wrap-up/         /musings/2025-q4-wrap-up/         301
+/posts/2025-q4-wrap-up          /musings/2025-q4-wrap-up/         301
+
+# The old posts list and its feed
+/posts/            /                   301
+/posts             /                   301
+/posts/index.xml   /index.xml          301
+
+# Every other old post is a review, with the same folder name
+/posts/*           /reviews/:splat     301
+
+# Old book listing pages
+/books/            /reviews/           301
+/books             /reviews/           301
+/tags/books/       /reviews/           301

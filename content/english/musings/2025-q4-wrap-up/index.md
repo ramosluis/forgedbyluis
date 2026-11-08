@@ -6,6 +6,7 @@ tags:
     - wrap up
 description: "Better late than never. Quick reviews of the books I read during the last quarter of 2025."
 summary: "I'm lazy and didn't update the blog with any reviews of the books I read in Q4 of 2025. This is my attempt at salvaging that situation."
+show_in: ["reviews"]
 ---
 
 Hello 🙂
