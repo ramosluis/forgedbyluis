@@ -12,3 +12,6 @@ resources
 jsconfig.json
 yarn.lock
 .hugo_build.lock
+.agents/
+.obsidian/
+.trash/
