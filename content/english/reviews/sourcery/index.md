@@ -7,8 +7,11 @@ summary: "One of the weaker Discworld books for me. Which means it's still a pre
 tags:
     - fantasy
 series:
+    - "Discworld"
+series_order: 5
+subseries:
     - "Discworld - Unseen University"
-series_order: 3
+subseries_order: 2
 book:
     author: "Terry Pratchett"
     rating: 3

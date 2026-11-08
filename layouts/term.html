@@ -1,8 +1,9 @@
 {{ define "main" }}
-  {{/* Series list in reading order; everything else newest first */}}
+  {{/* Series and sub-series in their own reading order; everything else newest first */}}
   {{ $pages := .Pages }}
-  {{ if eq .Data.Plural "series" }}
-    {{ $pages = sort .Pages "Params.series_order" }}
+  {{ $orderKey := index (dict "series" "series_order" "subseries" "subseries_order") .Data.Plural }}
+  {{ with $orderKey }}
+    {{ $pages = sort $.Pages (printf "Params.%s" .) }}
   {{ end }}
 
   <section class="section pt-14">

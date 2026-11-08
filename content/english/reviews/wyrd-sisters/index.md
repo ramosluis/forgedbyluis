@@ -7,8 +7,11 @@ summary: "The only Shakespeare I've read is Romeo & Juliet, this book makes me w
 tags:
     - fantasy
 series:
+    - "Discworld"
+series_order: 6
+subseries:
     - "Discworld - Witches"
-series_order: 2
+subseries_order: 2
 book:
     author: "Terry Pratchett"
     rating: 4
