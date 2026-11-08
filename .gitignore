@@ -13,5 +13,13 @@ jsconfig.json
 yarn.lock
 .hugo_build.lock
 .agents/
+
+# Obsidian stuff
 .obsidian/
 .trash/
+
+# AI assistant files bundled with Hugoplate theme (don't need them)
+AGENTS.md
+CLAUDE.md
+.agents/
+.claude/
