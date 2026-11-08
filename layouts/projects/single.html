@@ -31,6 +31,17 @@
             {{ .Content }}
           </div>
 
+          {{ with .GetTerms "tags" }}
+            <ul class="mt-10 flex flex-wrap gap-2">
+              {{ range . }}
+                <li>
+                  <a class="bg-light dark:bg-darkmode-light rounded-full px-3 py-1 text-sm"
+                     href="{{ .RelPermalink }}">{{ .LinkTitle | humanize }}</a>
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
+
           {{ partial "comments" . }}
         </article>
 

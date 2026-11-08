@@ -1,6 +1,6 @@
 {{- /* Markdown images: ![alt](file) — opens in a lightbox on click. */ -}}
 {{- $src := .Destination -}}
-{{- $res := .Page.Resources.Get .Destination -}}
+{{- $res := .Page.Resources.Get (urls.Parse .Destination).Path -}}
 {{- with $res }}{{ $src = .RelPermalink }}{{ end -}}
 <a href="{{ $src }}" class="glightbox"{{ with .Title }} data-description="{{ . }}"{{ end }}>
   <img src="{{ $src }}" alt="{{ .PlainText }}" loading="lazy"
