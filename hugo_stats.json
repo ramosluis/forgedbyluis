@@ -193,6 +193,7 @@
       "md:order-2",
       "min-h-screen",
       "min-w-0",
+      "ml-1",
       "ml-2",
       "ml-auto",
       "mr-1",

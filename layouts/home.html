@@ -93,9 +93,16 @@
               <h2 class="font-primary text-primary dark:text-darkmode-primary mb-3 text-sm font-semibold uppercase tracking-wider">Currently reading</h2>
               <ul class="space-y-2">
                 {{ range . }}
+                  {{ $book := . }}
                   <li class="font-secondary text-text-dark dark:text-darkmode-text-dark text-lg leading-snug">
-                    {{ .title }}
-                    {{ with .author }}
+                    {{ with $book.link }}
+                      <a class="underline-offset-4 hover:underline" href="{{ . }}" target="_blank" rel="noopener">
+                        {{ $book.title }}<span class="text-text-light dark:text-darkmode-text-light ml-1 text-sm" aria-hidden="true">↗</span>
+                      </a>
+                    {{ else }}
+                      {{ $book.title }}
+                    {{ end }}
+                    {{ with $book.author }}
                       <span class="font-primary text-text-light dark:text-darkmode-text-light block text-sm">{{ . }}</span>
                     {{ end }}
                   </li>
