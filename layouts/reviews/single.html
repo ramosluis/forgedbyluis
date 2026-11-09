@@ -87,10 +87,25 @@
             {{ .Content }}
           </div>
 
-          {{ with $book.goodreads }}
-            <a class="btn btn-outline-primary btn-sm mt-10" href="{{ . }}" target="_blank" rel="noopener">
-              On Goodreads ↗
-            </a>
+          {{ with $book.link }}
+            {{ $links := . }}
+            {{ if not (reflect.IsSlice $links) }}
+              {{ $links = slice $links }}
+            {{ end }}
+            <div class="mt-10 flex flex-wrap gap-3">
+              {{ range $links }}
+                {{ $host := (urls.Parse .).Host }}
+                {{ $label := "More about this book" }}
+                {{ if in $host "thestorygraph" }}
+                  {{ $label = "On StoryGraph" }}
+                {{ else if in $host "goodreads" }}
+                  {{ $label = "On Goodreads" }}
+                {{ end }}
+                <a class="btn btn-outline-primary btn-sm" href="{{ . }}" target="_blank" rel="noopener">
+                  {{ $label }} ↗
+                </a>
+              {{ end }}
+            </div>
           {{ end }}
 
           {{ partial "comments" . }}

@@ -27,7 +27,7 @@ const series = await ask("Series (leave empty if none)");
 const seriesOrder = series ? await ask(`Number in ${series}`) : "";
 const subseries = series ? await ask("Sub-series (leave empty if none)") : "";
 const subOrder = subseries ? await ask(`Number in ${subseries}`) : "";
-const goodreads = await ask("Goodreads URL (optional)");
+const link = await ask("URL (optional)");
 
 // ---------- front matter ----------
 const fm = [
@@ -51,7 +51,7 @@ fm.push("book:", `    author: ${q(author)}`);
 if (rating !== null && rating !== undefined) fm.push(`    rating: ${rating}`);
 else fm.push("    # rating: 3                    # 1-5, or 0 for DNF");
 if (lang && lang !== "English") fm.push(`    original_language: ${q(lang)}`);
-if (goodreads) fm.push(`    goodreads: ${q(goodreads)}`);
+if (link) fm.push(`    link: ${q(link)}`);
 fm.push("---", "", "");
 tR += fm.join("\n");
 
