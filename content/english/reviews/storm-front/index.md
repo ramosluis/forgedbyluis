@@ -1,9 +1,9 @@
 ---
 title: "Storm Front"
-date: 2026-02-18T18:47:35-06:00
+date: 2026-02-18
 draft: false
-description: ""
-summary: ""
+description: "Jim Butcher's first entry into his Dresden Files series. A little rough around the edges, but with a unique charm to it."
+summary: "Fantasy crime noir that might be a victim of falling into some harmful stereotypes. Rough around the edges but still fun."
 tags:
     - "fantasy"
     - "urban fantasy"

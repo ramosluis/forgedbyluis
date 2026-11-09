@@ -1,6 +1,6 @@
 ---
 title: "Chamanes eléctricos en la fiesta del sol"
-date: 2026-02-22T17:44:29-06:00
+date: 2026-02-22
 draft: false
 description: "Great prose and a clever structure that couldn't be saves by a confusing story that didn't click for me."
 summary: "Not what I expected, in a bad way. It has some things I liked, but not enough."
