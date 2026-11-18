@@ -4,8 +4,7 @@ date: 2026-03-25
 draft: false
 description: "Never Let Me Go by Kazuo Ishiguro, a book that reminds us that sometimes it's the small things in life that make it worth living, no matter how little time we have left."
 summary: "What if we made a dystopian world about clones whose only reason for existing was to donate organs to humans, but we make it deeply philosophical and sad?"
-tags:
-    - literary fiction
+tags: ["literary fiction", "dystopian"]
 book:
     author: "Kazuo Ishiguro"
     rating: 4
@@ -23,7 +22,7 @@ The book is told through the eyes and voice of Kathy H., an ex-student of Hailsh
 
 Among a myriad of other possible questions, and I’m here to tell you that most of these questions don’t get answered, they aren’t even really made in the book. I don’t think I’ve ever read a book where the author was so meticulous about the things he didn’t say. I’d even go as far as saying that the things that aren’t mentioned are more important than whatever is presented to us. The reason for this is because this is a truly “point of view” narrative. Kathy is our narrator, and it becomes clear pretty early on that whatever details she doesn’t expand upon, anything she doesn’t say, is because those details aren’t important to her. At the very least she thinks it’s not important for the story, which in part leaves the reader a little confused and frustrated as to why she drops these little tidbits and lore bombs then refuses to elaborate.
 
-This is explained in the story, we're told that the clones receive the same type of suden “information drops” from a very young age, then their teachers (called *carers*) quickly change the subject, with the goal of ingraining in their minds these ideas of who they are (clones) and what their purpose is (donating organs) and never questioning it. They grow up to just accept it as a simple fact of their lives and never question the why. This becomes a recurring theme, the students are essentially trained to be obedient students and not question anything and accept anything their carers tell them as fact, while also trying to live their own lives and preparing themselves for life after Hailsham.
+This is explained in the story, we're told that the clones receive the same type of sudden “information drops” from a very young age, then their teachers (called *carers*) quickly change the subject, with the goal of ingraining in their minds these ideas of who they are (clones) and what their purpose is (donating organs) and never questioning it. They grow up to just accept it as a simple fact of their lives and never question the why. This becomes a recurring theme, the students are essentially trained to be obedient students and not question anything and accept anything their carers tell them as fact, while also trying to live their own lives and preparing themselves for life after Hailsham.
 
 This is definitely not a feel-good novel, as the story progresses, and especially towards the end, a lot of things are clear to the reader that are not clear to Kathy herself, they were raised essentially as sheep for slaughter, because of the way they were brought up. The students never even got the idea of rebelling against the authority in Hailsham, all they can hope for is a very simple, boring life, which for them is very fulfilling despite it being a very empty life after everything is said and done, and they just accept all of that as normal.
 

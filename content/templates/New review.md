@@ -33,7 +33,7 @@ const link = await ask("URL (optional)");
 const fm = [
   "---",
   `title: ${q(title)}`,
-  `date: ${tp.date.now("YYYY-MM-DDTHH:mm:ssZ")}`,
+  `date: ${tp.date.now("YYYY-MM-DD")}`,
   "draft: true",
   'description: ""',
   'summary: ""',
