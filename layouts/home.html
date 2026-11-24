@@ -83,24 +83,41 @@
             {{ end }}
           {{ end }}
 
-          <!-- Currently reading (optional list, set in content/english/_index.md) -->
+          <!-- Currently reading (list in content/english/_index.md, covers in assets/images/reading/) -->
           {{ with .Params.currently_reading }}
             <section class="bg-light dark:bg-darkmode-light rounded-lg p-5">
-              <h2 class="font-primary text-primary dark:text-darkmode-primary mb-3 text-sm font-semibold uppercase tracking-wider">Currently reading</h2>
-              <ul class="space-y-2">
+              <h2 class="font-primary text-primary dark:text-darkmode-primary mb-4 text-sm font-semibold uppercase tracking-wider">Currently reading</h2>
+              <ul class="space-y-4">
                 {{ range . }}
                   {{ $book := . }}
-                  <li class="font-secondary text-text-dark dark:text-darkmode-text-dark text-lg leading-snug">
-                    {{ with $book.link }}
-                      <a class="underline-offset-4 hover:underline" href="{{ . }}" target="_blank" rel="noopener">
-                        {{ $book.title }}<span class="text-text-light dark:text-darkmode-text-light ml-1 text-sm" aria-hidden="true">↗</span>
-                      </a>
-                    {{ else }}
-                      {{ $book.title }}
+                  {{ $img := "" }}
+                  {{ with $book.cover }}
+                    {{ with resources.Get (printf "images/reading/%s" .) }}
+                      {{ $img = .Fill "96x144 webp" }}
                     {{ end }}
-                    {{ with $book.author }}
-                      <span class="font-primary text-text-light dark:text-darkmode-text-light block text-sm">{{ . }}</span>
+                  {{ end }}
+                  <li class="flex items-start gap-4">
+                    {{ with $img }}
+                      {{ if $book.link }}
+                        <a class="shrink-0" href="{{ $book.link }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                          <img class="w-12 rounded shadow-md" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" loading="lazy" />
+                        </a>
+                      {{ else }}
+                        <img class="w-12 shrink-0 rounded shadow-md" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" loading="lazy" />
+                      {{ end }}
                     {{ end }}
+                    <div class="font-secondary text-text-dark dark:text-darkmode-text-dark text-lg leading-snug">
+                      {{ with $book.link }}
+                        <a class="underline-offset-4 hover:underline" href="{{ . }}" target="_blank" rel="noopener">
+                          {{ $book.title }}<span class="text-text-light dark:text-darkmode-text-light ml-1 text-sm" aria-hidden="true">↗</span>
+                        </a>
+                      {{ else }}
+                        {{ $book.title }}
+                      {{ end }}
+                      {{ with $book.author }}
+                        <span class="font-primary text-text-light dark:text-darkmode-text-light block text-sm">{{ . }}</span>
+                      {{ end }}
+                    </div>
                   </li>
                 {{ end }}
               </ul>
