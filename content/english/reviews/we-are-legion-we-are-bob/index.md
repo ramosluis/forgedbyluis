@@ -20,7 +20,7 @@ book:
 
 I first heard about this book about a year ago, reading through [Project Hail Mary](/reviews/project-hail-mary/) reviews. It was described as a space opera, hard sci-fi, a little humor here and there, and with the same narrator for the audiobook. I haven't read much science fiction this year, so I decided to give it a chance, on audio of course.
 
-*We Are Legion (We Are Bob)* follows Bob, your average nerd who happens to be a wealthy CEO and pays to have his consciousness preserved after death. He dies right after, making this sound like the most creative insurance scam ever. He wakes up about 120 years later as software running a *von Neumann probe*: a spaceship that can build copies of itself. Earth, meanwhile, has finally gone to shit due to war, and Bob's job is to find new planets for whoever's left.
+*We Are Legion (We Are Bob)* follows Bob, your average nerd who happens to be a wealthy CEO and pays to have his consciousness preserved after death. He dies right after, making this sound like the most creative insurance scam ever. He wakes up about 120 years later as software running a *von Neumann probe*, a fancy phrase that means that he's now a spaceship that can build copies of itself. Earth, meanwhile, has finally gone to shit due to war, and Bob's job is to find new planets for whoever's left.
 
 Since Bob runs a spaceship that can replicate, so can he. Each copy picks its own name and has its own personality. The book follows a few of them as they look for habitable planets, discover alien life, and fight off a rival spaceship.
 
@@ -30,7 +30,7 @@ There's variety in the plot itself, with the various things that each replicant 
 
 I will admit I had a hard time keeping track of time in the book. Since the mission has such a grandiose scope, it takes years for most impactful things to happen. I wouldn't say that you **need** to keep track of how much time has passed between chapters, since each one begins with the star system and current date for the specific replicant that chapter will focus on. However, I wanted to. If the book is giving me that information every time, it must be important.
 
-There is one thing I had an issue with: the author absolutely loved to mention how many milliseconds it took for any of the replicants to think or compute something. He's a former programmer, so I'd expect him to time it in terms of processor cycles, not milliseconds. A ton of things took "1 millisecond". It's not logical, and there's no good reason why this nagged at me, but it did. Every time I heard that phrase, even if it was increased to 100 milliseconds or whatever, I rolled my eyes.
+There is one thing I had an issue with: the author absolutely loved to mention how many milliseconds it took for any of the replicants to think or compute something. He's a former programmer, so I expected him to time it in terms of processor cycles, not milliseconds. A ton of things took "1 millisecond". It's not logical, and there's no good reason why this nagged at me, but it did. Every time I heard that phrase, even if it was increased to 100 milliseconds or whatever, I rolled my eyes.
 
 Another thing I wasn't huge on was all the star systems, which, I know, is kind of the book's central point. Exploring the galaxy! Finding uncharted planets! But as I'm unfamiliar with the names of the stars and space regions, I just never really kept track of all the Epsilons and Eridanis (Eridanes? Eridani?) and all that.
 
