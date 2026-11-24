@@ -34,3 +34,4 @@ tR += fm.join("\n");
 if (!app.vault.getAbstractFileByPath(folder)) await app.vault.createFolder(folder);
 await tp.file.move(`/${folder}/index`);
 %>
+

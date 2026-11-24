@@ -1,0 +1,22 @@
+{
+  "id": "cedd3a0a-c774-4dd2-b791-72cb413504b6",
+  "name": "custom-theme-work",
+  "created": 1795496023581,
+  "data": {
+    "__style_manager_theme": "Minimal",
+    "__style_manager_appearance": "light",
+    "__style_manager_snippets": [
+      "lilac-dawn"
+    ],
+    "__style_manager_accent_color": ""
+  },
+  "targetedPrefixes": [
+    "__theme",
+    "__appearance",
+    "__snippets",
+    "__accentColor",
+    "minimal-style",
+    "minimal-advanced",
+    "minimal-cards-style"
+  ]
+}
